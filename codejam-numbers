@@ -1,0 +1,34 @@
+import  math
+print("enter number of testcases")
+t=int(input())
+x=1
+mytemp=[]
+while(x<=t):
+    x=x+1
+    print("enter n")
+    n=int(input())
+    num = (3 + math.sqrt(5)) **n
+    num = int(num)
+    res = [int(x) for x in str(num)]
+    if len(res) == 1:
+        res.append(0)
+        res.append(0)
+        st = [str(integer) for integer in res]
+        cc = "".join(st)
+        myfinal = int(cc)
+        print(myfinal)
+    if len(res) == 2:
+        res.append(0)
+        st = [str(integer) for integer in res]
+        cc = "".join(st)
+        myfinal = int(cc)
+        print(myfinal)
+
+    elif len(res) != 1 or len(res) != 2:
+        mytemp=res[-3:]
+        st=[str(integer) for integer in mytemp]
+        cc="".join(st)
+        myfinal=int(cc)
+        print(myfinal)
+
+
