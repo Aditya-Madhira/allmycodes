@@ -1,0 +1,55 @@
+from itertools import permutations
+import math
+print("enter num of testcases")
+t=int(input())
+x=1
+v1=[]
+v2=[]
+p_v1=[]
+p_v2=[]
+sp=[]
+first_try=0
+mytemp=1
+def sccal(myl1,myl2,myn):
+    megat=0
+    for i in range(myn):
+        megat=megat+(myl1[i]*myl2[i])
+        sp.append(megat)
+
+
+
+
+
+
+
+while(x<=t):
+    x=x+1
+    print("enter number of digits")
+    n=int(input())
+    print("enter coordinates of v1")
+    for i in range(n):
+        temp=int(input())
+        v1.append(temp)
+    print("enter v2")
+    for i in range(n):
+        temp=int(input())
+        v2.append(temp)
+    for i in range(n):
+        first_try=first_try+(v1[i]*v2[i])
+        sp.append(first_try)
+    p_v1=list(permutations(v1))
+    p_v2=(permutations(v2))
+    myfact = math.factorial(n)
+    while(mytemp<myfact):
+        mytemp=mytemp+1
+        for i in p_v1:
+            for j in p_v2:
+                sccal(i,j,n)
+    sp.sort()
+    print(sp[0])
+
+
+
+
+
+
